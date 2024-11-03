@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+    /* Body background based on logo colors */
+    body {
+      background-color: #003366; /* Dark blue color from logo */
+      color: #ffffff; /* White text color for visibility */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Centered container for form content with background image */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+      color: #000000; /* Black text color for readability */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 800px;
+      width: 100%;
+      box-sizing: border-box;
+      background-image: url('https://betteraviationjobs.com/wp-content/uploads/2019/11/Raya-Airways-B767.jpg');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: lighten;
+    }
+
+    /* Logo styling */
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 150px;
+    }
+
+    /* Form styling */
+    form {
+      width: 100%;
+    }
+
+    label, select, input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    input[type="button"] {
+      background-color: #003366;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    input[type="button"]:hover {
+      background-color: #002244; /* Slightly darker shade on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo at the top of the form -->
+    <img src="https://www.ch-aviation.com/portal/stock/3261.png" alt="Company Logo" class="logo">
+
+  <h2>Spare Request Form</h2>
+  <form id="spareRequestForm">
+    <label>Equipment No</label>
+    <input type="text" name="equipmentNo" required>
+
+    <label>Equipment Type</label>
+    <select name="equipmentType" required>
+      <option value="PICKUP 4X4">PICKUP 4X4</option>
+      <option value="LORRY 3 TON">LORRY 3 TON</option>
+      <!-- Add other options here -->
+    </select>
+
+    <label>Location</label>
+    <select name="location" required>
+      <option value="KUL">KUL</option>
+      <option value="BKI">BKI</option>
+      <option value="PANEL VAN">PANEL VAN</option>
+      <option value="WINDOW VAN">WINDOW VAN</option>
+      <option value="CAR">CAR</option>
+      <option value="MOTORCYCLE">MOTORCYCLE</option>
+      <option value="BAGGAGE TRACTOR">BAGGAGE TRACTOR</option>
+      <option value="PUSHBACK">PUSHBACK</option>
+      <option value="LOWER DECK LOADER">LOWER DECK LOADER</option>
+      <option value="MAIN DECK LOADER">MAIN DECK LOADER</option>
+      <option value="GROUND POWER UNIT">GROUND POWER UNIT</option>
+      <option value="CONVEYOR BELT LOADER">CONVEYOR BELT LOADER</option>
+      <option value="LAVATORY SERVICING CART ">LAVATORY SERVICING CART </option>
+      <option value="WATER SERVICING CART ">WATER SERVICING CART </option>
+      <option value="DIESEL CART">DIESEL CART</option>
+      <option value="TOWBAR">TOWBAR</option>
+      <option value="FORKLIFT">FORKLIFT</option>
+      <option value="DOLLY">DOLLY</option>
+      <option value="MAINTENANCE STEP">MAINTENANCE STEP</option>
+      <option value="APU STEP">APU STEP</option>
+      <option value="MOTORIZED PAX STEP">MOTORIZED PAX STEP</option>
+      <option value="BAGGAGE TROLLEY">BAGGAGE TROLLEY</option>
+      <option value="PAX STEP">PAX STEP</option>
+      <!-- Add other options here -->
+    </select>
+
+    <label>EDR No</label>
+    <input type="text" name="edrNo">
+
+    <label>Date</label>
+    <input type="date" name="date" required>
+
+    <label>Time</label>
+    <input type="time" name="time" required>
+
+    <!-- Fixed 20 Rows Parts/Component Table -->
+    <label>Parts/Components</label>
+    <table id="partsTable">
+      <thead>
+        <tr>
+          <th>Parts/Component</th>
+          <th>Part No</th>
+          <th>Qty</th>
+          <th>Remarks</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 20 Fixed Rows -->
+        <tr>
+          <td><input type="text" name="partsComponent[]"></td>
+          <td><input type="text" name="partNo[]"></td>
+          <td><input type="number" name="qty[]"></td>
+          <td>
+            <select name="remarks[]">
+              <option value="-">-</option>
+              <option value="IN STOCK">IN STOCK</option>
+              <option value="NOT IN STOCK">NOT IN STOCK</option>
+            </select>
+          </td>
+          <td><input type="checkbox" name="status[]"> Complete</td>
+        </tr>
+        <!-- Repeat the same row structure for 19 more rows -->
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+        <tr><td><input type="text" name="partsComponent[]"></td><td><input type="text" name="partNo[]"></td><td><input type="number" name="qty[]"></td><td><select name="remarks[]"><option value="-">-</option>/"IN STOCK">IN STOCK</option><option value="NOT IN STOCK">NOT IN STOCK</option></select></td><td><input type="checkbox" name="status[]"> Complete</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Continue with remaining form fields -->
+    <label>Request By</label>
+    <select name="requestedBy" required>
+      <option value="NOOR FADLINSYAH BIN MI HAMZAH">NOOR FADLINSYAH BIN MI HAMZAH</option>
+      <option value="HAMIRUL FAZLEE BIN SAHRI">HAMIRUL FAZLEE BIN SAHRI</option>
+      <option value="MUHAMAD SAIFULAZRI BIN MD ARDANI">HMUHAMAD SAIFULAZRI BIN MD ARDANI</option>
+      <option value="MUHAMAD SAIFULAZRI BIN MD ARDANII">MUHAMAD SAIFULAZRI BIN MD ARDANI</option>
+      <option value="AIDIL AIMAN BIN SURAZMAN">AIDIL AIMAN BIN SURAZMAN</option>
+      <option value="MUHAMMAD HARITH HASIF BIN MOHD ARIFFIN">MUHAMMAD HARITH HASIF BIN MOHD ARIFFIN</option>
+      <option value="ARIFF BIN ABD GHAFFAR">ARIFF BIN ABD GHAFFAR</option>
+      <option value="ISMAIL BIN IBRAHIM">ISMAIL BIN IBRAHIM</option>
+      <option value="MOHD SAFAWI BIN AHMAD MUZANI">MOHD SAFAWI BIN AHMAD MUZANI</option>
+      <option value="MOHAMAD RASHIID BIN MOHD NOR">MOHAMAD RASHIID BIN MOHD NOR</option>
+      <option value="MOHAMAD ASRAF BIN ABD MANAF">MOHAMAD ASRAF BIN ABD MANAF</option>
+      <option value="MOHAMMAD FAKHRUL AMEER BIN MOHD RUSDAN">MOHAMMAD FAKHRUL AMEER BIN MOHD RUSDAN</option>
+      <option value="AZLI BIN MOHD SAMSURI">AZLI BIN MOHD SAMSURI</option>
+      <option value="KHAIRUL BIN AHMAD">KHAIRUL BIN AHMAD</option>
+      <option value="PETRUS SUIKING">PETRUS SUIKING</option>
+      <option value="DENNIEL LESTER DENIS">DENNIEL LESTER DENIS</option>
+      <option value="RASSLLYE BIN ANSAKOI">RASSLLYE BIN ANSAKOI</option>
+      <option value="HANIF BIN HAMDAN">HANIF BIN HAMDAN</option>
+      <!-- Add other options here -->
+    </select>
+
+    <label>Received By</label>
+    <select name="receivedBy" required>
+      <option value="MOHD ISMAIL BIN ZAINI">MOHD ISMAIL BIN ZAINI</option>
+      <option value="MOHAMAD RASHIID BIN MOHD NOR">MOHAMAD RASHIID BIN MOHD NOR</option>
+      <!-- Add other options here -->
+    </select>
+
+    <label>Verified By</label>
+    <select name="verifiedBy" required>
+      <option value="MOHD ARZERILL">MOHD ARZERILL</option>
+    </select>
+
+    <input type="button" value="Submit" onclick="submitFormData()">
+  </form>
+
+  <script>
+    function submitFormData() {
+      const form = document.getElementById("spareRequestForm");
+      const formData = new FormData(form);
+      const data = {};
+
+      formData.forEach((value, key) => {
+        if (key.endsWith('[]')) {
+          key = key.replace('[]', '');  // Remove '[]' for processing
+          if (!data[key]) {
+            data[key] = [];
+          }
+          data[key].push(value);
+        } else {
+          data[key] = value;
+        }
+      });
+
+      google.script.run.withSuccessHandler((response) => {
+        alert(response);
+        form.reset();
+      }).submitForm(data);
+    }
+  </script>
+</body>
+</html>
